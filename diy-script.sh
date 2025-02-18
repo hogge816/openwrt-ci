@@ -54,6 +54,9 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
 git_sparse_clone main https://github.com/haiibo/packages luci-theme-atmaterial luci-theme-opentomcat luci-theme-netgear
 
+# ikoolproxy
+git clone -b main https://github.com/ilxp/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
+
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
@@ -78,8 +81,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mo
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # DDNS.to
-git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
-git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
+# git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
+# git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
 
 # iStore
 # git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
