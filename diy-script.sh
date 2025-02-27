@@ -78,6 +78,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mo
 # Alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
+# ChatGPT
+git clone --depth=1 https://github.com/sirpdboy/luci-app-chatgpt-web package/luci-app-chatgpt
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
 # git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
