@@ -92,15 +92,18 @@ jobs:
         ccache: true
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
+
+    - name: Patch skbuff_recycle.c
+      run: |
+           chmod +w feeds/net/core/skbuff_recycle.c
+           sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb);/' feeds/net/core/skbuff_recycle.c
+      
     
     - name: Install Feeds(安装feeds)
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-
-    - name: Patch skbuff_recycle.c
-      run: sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb);/' feeds/net/core/skbuff_recycle.c
 
   
     - name: Load Custom Configuration(加载自定义配置)
