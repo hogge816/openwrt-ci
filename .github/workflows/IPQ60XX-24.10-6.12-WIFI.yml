@@ -92,12 +92,6 @@ jobs:
         ccache: true
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
-
-    - name: Patch skbuff_recycle.c
-      run: |
-           file=$(find $OPENWRT_PATH -name "skbuff_recycle.c")
-           chmod +w $file
-           sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb);/' $file
       
     
     - name: Install Feeds(安装feeds)
@@ -115,6 +109,12 @@ jobs:
         cd $OPENWRT_PATH
         bash $GITHUB_WORKSPACE/$DIY_SCRIPT
 
+    - name: Patch skbuff_recycle.c
+      run: |
+           file=$(find $OPENWRT_PATH -name "skbuff_recycle.c")
+           chmod +w $file
+           sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb);/' $file
+           
     - name: Download DL Package(下载DL软件包)
       run: |
         cd $OPENWRT_PATH
