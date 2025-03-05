@@ -113,7 +113,7 @@ jobs:
       run: |
            file=$(find $OPENWRT_PATH -name "skbuff_recycle.c")
            chmod +w $file
-           sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb);/' $file
+           sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb,SKB_CONSUMED);/' $file
            
     - name: Download DL Package(下载DL软件包)
       run: |
