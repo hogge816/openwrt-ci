@@ -95,8 +95,9 @@ jobs:
 
     - name: Patch skbuff_recycle.c
       run: |
-           chmod +w feeds/net/core/skbuff_recycle.c
-           sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb);/' feeds/net/core/skbuff_recycle.c
+           file=$(find $OPENWRT_PATH -name "skbuff_recycle.c")
+           chmod +w $file
+           sed -i 's/skb_release_data(skb, SKB_CONSUMED, false);/skb_release_data(skb);/' $file
       
     
     - name: Install Feeds(安装feeds)
