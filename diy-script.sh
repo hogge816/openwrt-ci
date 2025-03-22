@@ -81,6 +81,9 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mo
 # ChatGPT
 git clone https://github.com/sbwml/luci-app-openai package/luci-app-chatgpt
 
+#gecoosac
+git clone https://github.com/lwb1978/openwrt-gecoosac package/gecoosac
+
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
 # git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
