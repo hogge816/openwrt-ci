@@ -30,13 +30,6 @@ jobs:
             gcc-11-aarch64-linux-gnu g++-11-aarch64-linux-gnu quilt
 
       #  3️⃣检出源码
-      - name: Checkout Source
-        uses: actions/checkout@v4
-        with:
-          ref: kernel-6.12
-          fetch-depth: 0
-          submodules: true
-
       - name: Clone Source Code(克隆源代码)
         run: |
           df -hT $GITHUB_WORKSPACE
